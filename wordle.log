@@ -1,0 +1,21 @@
+[INFO] Запуск игры Wordle
+[INFO] Загружено 4165 слов из 5 букв из файла: words_ru.txt
+[INFO] Словарь загружен: 4165 слов
+[INFO] Загадано слово: БИЛЛЬ
+[INFO] Игра создана. Загадано слово.
+[WARNING] Слово 'АРПАА' не найдено в словаре
+ru.yandex.practicum.exceptions.WordNotFoundInDictionary: Слово 'АРПАА' не найдено в словаре
+	at ru.yandex.practicum.wordleAuxiliaryСlasses.WordleGame.makeGuess(WordleGame.java:52)
+	at ru.yandex.practicum.Wordle.main(Wordle.java:55)
+[INFO] Попытка 1: арпаа → 🟥 🟥 🟥 🟥 🟥 (слово не в словаре)
+[INFO] Сгенерирована подсказка: ЛИЦЕЙ
+[INFO] Попытка 2: ЛИЦЕЙ → 🟨 🟩 🟥 🟥 🟥
+[INFO] Сгенерирована подсказка: ЧИЛИМ
+[INFO] Попытка 3: ЧИЛИМ → 🟥 🟩 🟩 🟨 🟥
+[INFO] Сгенерирована подсказка: ХИЛУС
+[INFO] Попытка 4: ХИЛУС → 🟥 🟩 🟩 🟥 🟥
+[INFO] Сгенерирована подсказка: ШИЛЬЯ
+[INFO] Попытка 5: ШИЛЬЯ → 🟥 🟩 🟩 🟨 🟥
+[INFO] Сгенерирована подсказка: БИЛЛЬ
+[INFO] Попытка 6: БИЛЛЬ → 🟩 🟩 🟩 🟩 🟩
+[INFO] Игрок угадал слово: БИЛЛЬ
