@@ -43,10 +43,8 @@ class WordleGameTest {
     void testCorrectGuessLogsSuccess() {
         game.makeGuess("ТАКСИ");
 
-        // Проверяем, что игра завершена победой
         assertTrue(game.isWon(), "Игра должна быть выиграна при верном слове");
         assertFalse(game.isLost(), "Игра не должна быть проиграна при верном слове");
-        // Проверяем количество оставшихся попыток
         assertEquals(5, game.getRemainingAttempts(), "Должно остаться 5 попыток после верной попытки");
     }
 
@@ -56,7 +54,6 @@ class WordleGameTest {
 
         String logOutput = stringWriter.toString();
         System.out.println(logOutput);
-        // Проверяем сообщение об отсутствии слова в словаре
         assertTrue(logOutput.contains("[WARNING] Слово 'СЕКТА' не найдено в словаре"),
                 "В логах должно быть предупреждение о отсутствии слова в словаре");
     }

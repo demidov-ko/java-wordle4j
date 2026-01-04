@@ -26,18 +26,14 @@ class WordleDictionaryLoaderTest {
 
     @BeforeEach
     void setUp() {
-        // Буфер в памяти для логов
         stringWriter = new StringWriter();
         printWriter = new PrintWriter(stringWriter);
-        // Создаём GameLogger с PrintWriter
         logger = new GameLogger(printWriter);
-        // Передаём GameLogger в загрузчик
         loader = new WordleDictionaryLoader(logger);
     }
 
     @Test
     void testLoadFromFileValidFile() throws IOException {
-        // Создаём временный файл с тестовыми словами
         Path tempFile = Files.createTempFile("test_words", ".txt");
         Files.write(tempFile, List.of("ТАКСИ", "СЕКТА", "ЗАБЕГ"));
 
@@ -48,7 +44,6 @@ class WordleDictionaryLoaderTest {
         assertTrue(dictionary.contains("ЗАБЕГ"));
         assertEquals(3, dictionary.size());
 
-        // Проверяем логи: должно быть сообщение о загрузке
         String logOutput = stringWriter.toString();
         System.out.println(logOutput);
         assertTrue(logOutput.contains("[INFO] Загружено 3 слов из 5 букв из файла: " + tempFile));
@@ -58,12 +53,8 @@ class WordleDictionaryLoaderTest {
 
     @Test
     void testLoadFromFileNonExistentFile() {
-        //assertThrows проверяет, что при выполнении кода выбрасывается ожидаемое исключение WordleIOException.class;
-        //автоматически проваливает тест, если исключение не выброшено или выброшено другое исключение.
-        //Второй параметр: лямбда‑выражение () -> loader.loadFromFile("non_existent.txt") — код, который должен вызвать исключение
         assertThrows(WordleIOException.class, () -> loader.loadFromFile("non_existent.txt"),
                 "Ожидалось исключение WordleIOException при загрузке несуществующего файла");
-        // Проверяем, что в логах есть сообщение об ошибке
         String logOutput = stringWriter.toString();
         System.out.println(logOutput);
         assertTrue(logOutput.contains("[ERROR] Ошибка загрузки словаря из файла non_existent.txt"));
@@ -75,7 +66,6 @@ class WordleDictionaryLoaderTest {
         Path tempFile = Files.createTempFile("empty", ".txt");
         assertThrows(DictionaryLoadException.class, () -> loader.loadFromFile(tempFile.toString()),
                 "Ожидалось исключение DictionaryLoadException при загрузке пустого файла");
-        // Проверяем логи
         String logOutput = stringWriter.toString();
         System.out.println(logOutput);
         assertTrue(logOutput.contains("[ERROR] Словарь пуст"),
