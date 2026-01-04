@@ -4,9 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.yandex.practicum.exceptions.DictionaryLoadException;
 import ru.yandex.practicum.exceptions.WordleIOException;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.GameLogger;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleDictionary;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleDictionaryLoader;
+import ru.yandex.practicum.wordle_auxiliary_classes.GameLogger;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleDictionary;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleDictionaryLoader;
 
 import java.io.IOException;
 import java.io.PrintWriter;

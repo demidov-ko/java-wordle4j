@@ -3,9 +3,9 @@ package ru.yandex.practicum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.yandex.practicum.exceptions.WordleGameException;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.GameLogger;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleDictionary;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleGame;
+import ru.yandex.practicum.wordle_auxiliary_classes.GameLogger;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleDictionary;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleGame;
 //import ru.yandex.practicum.exceptions.GameOverException;
 
 import java.io.PrintWriter;

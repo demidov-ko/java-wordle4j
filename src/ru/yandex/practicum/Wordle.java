@@ -1,10 +1,10 @@
 package ru.yandex.practicum;
 
 import ru.yandex.practicum.exceptions.*;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.GameLogger;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleDictionary;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleDictionaryLoader;
-import ru.yandex.practicum.wordleAuxiliaryСlasses.WordleGame;
+import ru.yandex.practicum.wordle_auxiliary_classes.GameLogger;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleDictionary;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleDictionaryLoader;
+import ru.yandex.practicum.wordle_auxiliary_classes.WordleGame;
 
 
 import java.io.FileWriter;

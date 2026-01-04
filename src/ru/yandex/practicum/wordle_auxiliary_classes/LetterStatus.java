@@ -1,4 +1,4 @@
-package ru.yandex.practicum.wordleAuxiliaryСlasses;
+package ru.yandex.practicum.wordle_auxiliary_classes;
 
 public enum LetterStatus {
     CORRECT("\uD83D\uDFE9"),
