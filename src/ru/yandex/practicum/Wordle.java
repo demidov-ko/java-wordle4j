@@ -8,6 +8,7 @@ import ru.yandex.practicum.wordle_auxiliary_classes.WordleGame;
 
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -71,7 +72,6 @@ public class Wordle {
                             logger.info("Игрок не угадал слово. Загаданное: " + game.getTargetWord());
                             break;
                         }
-
                     } catch (WordNotFoundInDictionary e) {
                         System.out.println("Ошибка: слово '" + input + "' не найдено в словаре.");
                         logger.warning("Неверное слово: " + input, e);
@@ -90,19 +90,19 @@ public class Wordle {
                         logger.error("Непредвиденная ошибка в игровом цикле", e);
                     }
                 }
+            } catch (DictionaryLoadException e) {
+                System.err.println("Критическая ошибка: не удалось загрузить словарь. Проверьте файл '" +
+                        DICTIONARY_FILE + "'");
+            } catch (WordleIOException e) {
+                System.err.println("Критическая ошибка: не удалось создать лог‑файл '" + LOG_FILE + "'");
+            } catch (Exception e) {
+                System.err.println("Непредвиденная ошибка: " + e.getMessage());
             }
-
-
-        } catch (DictionaryLoadException e) {
-            System.err.println("Критическая ошибка: не удалось загрузить словарь. Проверьте файл '" +
-                    DICTIONARY_FILE + "'");
-        } catch (WordleIOException e) {
-            System.err.println("Критическая ошибка: не удалось создать лог‑файл '" + LOG_FILE + "'");
-        } catch (Exception e) {
-            System.err.println("Непредвиденная ошибка: " + e.getMessage());
+        } catch (IOException e) {
+            throw new WordleIOException("Ошибка создания лог‑файла '" + LOG_FILE + "'", e);
         }
-            System.out.println("\n" + "=".repeat(50));
-            System.out.println("Игра завершена. Спасибо за игру!");
-            System.out.println("=".repeat(50));
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("Игра завершена. Спасибо за игру!");
+        System.out.println("=".repeat(50));
     }
 }

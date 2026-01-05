@@ -53,8 +53,7 @@ class WordleGameTest {
         game.makeGuess("СЕКТА");
 
         String logOutput = stringWriter.toString();
-        System.out.println(logOutput);
-        assertTrue(logOutput.contains("[WARNING] Слово 'СЕКТА' не найдено в словаре"),
+        assertTrue(logOutput.contains("[WARNING] Слово СЕКТА не найдено в словаре"),
                 "В логах должно быть предупреждение о отсутствии слова в словаре");
     }
 

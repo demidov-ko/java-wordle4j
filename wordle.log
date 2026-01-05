@@ -1,12 +1,25 @@
 [INFO] Запуск игры Wordle
 [INFO] Загружено 4165 слов из 5 букв из файла: words_ru.txt
 [INFO] Словарь загружен: 4165 слов
-[INFO] Загадано слово: ШТРЕК
+[INFO] Загадано слово: КОРЦЫ
 [INFO] Игра создана. Загадано слово.
-[INFO] Попытка 1: ВЕСЛО → 🟥 🟨 🟥 🟥 🟥
-[INFO] Попытка 2: СУСЛО → 🟥 🟥 🟥 🟥 🟥
-[INFO] Попытка 3: ТАКСИ → 🟨 🟥 🟨 🟥 🟥
-[INFO] Попытка 4: ЖЕРЛО → 🟥 🟨 🟩 🟥 🟥
-[INFO] Сгенерирована подсказка: ШТРЕК
-[INFO] Попытка 5: ШТРЕК → 🟩 🟩 🟩 🟩 🟩
-[INFO] Игрок угадал слово: ШТРЕК
+[WARNING] Игровая ошибка
+ru.yandex.practicum.exceptions.WordleGameException: Слово должно содержать только русские буквы
+	at ru.yandex.practicum.wordle_auxiliary_classes.WordleGame.normalizeAndValidate(WordleGame.java:66)
+	at ru.yandex.practicum.wordle_auxiliary_classes.WordleGame.makeGuess(WordleGame.java:44)
+	at ru.yandex.practicum.Wordle.main(Wordle.java:53)
+[INFO] Попытка 1: СЕКТА → 🟥 🟥 🟨 🟥 🟥
+[INFO] Попытка 2: ТАКСИ → 🟥 🟥 🟨 🟥 🟥
+[INFO] Попытка 3: УПРЕК → 🟥 🟥 🟩 🟥 🟨
+[INFO] Сгенерирована подсказка: ОКРОЛ
+[INFO] Попытка 4: ОКРОЛ → 🟨 🟨 🟩 🟨 🟥
+[WARNING] Неверная длина слова: ыыв
+ru.yandex.practicum.exceptions.InvalidWordLength: Длина слова: 3, ожидается: 5
+	at ru.yandex.practicum.wordle_auxiliary_classes.WordleGame.normalizeAndValidate(WordleGame.java:62)
+	at ru.yandex.practicum.wordle_auxiliary_classes.WordleGame.makeGuess(WordleGame.java:44)
+	at ru.yandex.practicum.Wordle.main(Wordle.java:53)
+[INFO] Сгенерирована подсказка: КОРЧЬ
+[INFO] Попытка 5: КОРЧЬ → 🟩 🟩 🟩 🟥 🟥
+[INFO] Сгенерирована подсказка: КОРЦЫ
+[INFO] Попытка 6: КОРЦЫ → 🟩 🟩 🟩 🟩 🟩
+[INFO] Игрок угадал слово: КОРЦЫ
