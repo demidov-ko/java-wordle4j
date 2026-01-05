@@ -8,7 +8,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WorldeDictionaryTest {
+public class WordleDictionaryTest {
     private WordleDictionary dictionary;
 
     @BeforeEach

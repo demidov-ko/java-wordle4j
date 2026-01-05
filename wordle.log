@@ -1,15 +1,12 @@
 [INFO] Запуск игры Wordle
 [INFO] Загружено 4165 слов из 5 букв из файла: words_ru.txt
 [INFO] Словарь загружен: 4165 слов
-[INFO] Загадано слово: САЛЕП
+[INFO] Загадано слово: ШТРЕК
 [INFO] Игра создана. Загадано слово.
-[WARNING] Слово 'ПРОЛВ' не найдено в словаре
-ru.yandex.practicum.exceptions.WordNotFoundInDictionary: Слово 'ПРОЛВ' не найдено в словаре
-	at ru.yandex.practicum.wordle_auxiliary_classes.WordleGame.makeGuess(WordleGame.java:52)
-	at ru.yandex.practicum.Wordle.main(Wordle.java:55)
-[INFO] Попытка 1: пролв → 🟨 🟥 🟥 🟨 🟥 (слово не в словаре)
-[INFO] Сгенерирована подсказка: СКЛЕП
-[INFO] Попытка 2: СКЛЕП → 🟩 🟥 🟩 🟩 🟩
-[INFO] Сгенерирована подсказка: САЛЕП
-[INFO] Попытка 3: САЛЕП → 🟩 🟩 🟩 🟩 🟩
-[INFO] Игрок угадал слово: САЛЕП
+[INFO] Попытка 1: ВЕСЛО → 🟥 🟨 🟥 🟥 🟥
+[INFO] Попытка 2: СУСЛО → 🟥 🟥 🟥 🟥 🟥
+[INFO] Попытка 3: ТАКСИ → 🟨 🟥 🟨 🟥 🟥
+[INFO] Попытка 4: ЖЕРЛО → 🟥 🟨 🟩 🟥 🟥
+[INFO] Сгенерирована подсказка: ШТРЕК
+[INFO] Попытка 5: ШТРЕК → 🟩 🟩 🟩 🟩 🟩
+[INFO] Игрок угадал слово: ШТРЕК

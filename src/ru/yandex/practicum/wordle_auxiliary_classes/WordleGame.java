@@ -40,24 +40,23 @@ public class WordleGame {
         if (guessTrim.isEmpty()) {
             return getHint();
         }
-        normalizeAndValidate(guessTrim);
-        steps++;
-        guesses.add(guessTrim);
-
-        String result = analyzeGuess(guessTrim);
-
-        // проверяем наличие слова в словаре ПОСЛЕ анализа
-        String upperGuess = guess.toUpperCase();
-        if (!dictionary.contains(upperGuess)) {
-            logger.warning("Слово '" + upperGuess + "' не найдено в словаре",
-                    new WordNotFoundInDictionary(upperGuess));
-            result += " (слово не в словаре)";
+        // проверяем наличие слова в словаре
+        String guessNormalize = normalizeAndValidate(guessTrim);
+        if (!dictionary.contains(guessNormalize)) {
+            logger.warning("Слово " + guessNormalize + " не найдено в словаре",
+                    new WordNotFoundInDictionary(guessNormalize));
+            return "Слово \033[1m" + guessNormalize + "\033[0m не найдено в словаре. Попробуйте ввести другое слово";
         }
-        logger.info("Попытка " + steps + ": " + guessTrim + " → " + result);
+
+        steps++;
+        guesses.add(guessNormalize);
+
+        String result = analyzeGuess(guessNormalize);
+        logger.info("Попытка " + steps + ": " + guessNormalize + " → " + result);
         return result;
     }
 
-    public void normalizeAndValidate(String guess) throws WordleGameException {
+    public String normalizeAndValidate(String guess) throws WordleGameException {
         // проверка длины
         if (guess.length() != 5) {
             throw new InvalidWordLength(guess.length(), 5);
@@ -66,6 +65,7 @@ public class WordleGame {
         if (!normalized.matches("[А-Яа-яЁё]+")) {
             throw new WordleGameException("Слово должно содержать только русские буквы");
         }
+        return normalized;
     }
 
     private String analyzeGuess(String guess) {

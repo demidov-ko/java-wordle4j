@@ -4,7 +4,7 @@ import ru.yandex.practicum.exceptions.*;
 
 import java.io.PrintWriter;
 
-public class GameLogger {
+public class GameLogger implements AutoCloseable {
     private final PrintWriter logger;
 
     public GameLogger(PrintWriter writer) {
@@ -26,6 +26,7 @@ public class GameLogger {
         e.printStackTrace(logger);
     }
 
+    @Override
     public void close() {
         logger.close();
     }
